@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo — Artesanía Digital | Cerámica, Textil y Artesanía Española</title>
+    <meta name="description"
+        content="Explora nuestra colección de artesanía española auténtica. Filtra por región, material o escenario de vida. Cada pieza es única.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR NAV -->
+    <aside class="sidebar-nav" id="navbar">
+
+        <a href="index.html" class="sidebar-logo" aria-label="Artesanía Digital Home">
+            <span class="logo-icon">
+                <img src="assets/images/logo-ceramic-tile.jpg" alt="Artesanía Digital Logo"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </span>
+            <span class="logo-text">Artesanía <br><span class="logo-accent">Digital</span></span>
+        </a>
+
+        <div class="sidebar-links" id="navLinks">
+            <a href="index.html#sommelier">Sommelier IA</a>
+            <a href="catalog.html" class="active-link">Catálogo</a>
+            <div class="sidebar-dropdown">
+                <a href="index.html#maestros" onclick="this.parentElement.classList.toggle('open'); return false;">
+                    Maestros
+                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </a>
+                <div class="sidebar-sub-links">
+                    <a href="catalog.html?cat=ceramica">🏺 Cerámica</a>
+                    <a href="catalog.html?cat=textil">🧶 Textil</a>
+                    <a href="catalog.html?cat=madera">🪵 Madera</a>
+                    <a href="catalog.html?cat=cuero">👜 Cuero</a>
+                    <a href="catalog.html?cat=vidrio">🥂 Vidrio</a>
+                    <a href="catalog.html?cat=metal">⚒️ Metal</a>
+                    <a href="index.html#maestros">Ver Todos</a>
+                </div>
+            </div>
+            <a href="index.html#how-it-works">Cómo Funciona</a>
+            <a href="artesano.html">Mi Taller ✨</a>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-cta" id="cartToggleBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                </svg>
+                <span>Mi Carrito</span>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </aside>
+
+    <main class="content-wrapper">
+
+        <!-- CATALOG HERO -->
+        <section class="catalog-hero">
+            <!-- Andalusian Geometric Pattern Overlay -->
+            <div class="hero-pattern-overlay" aria-hidden="true"
+                style="position: absolute; inset: 0; z-index: 0; opacity: 0.15; pointer-events: none;">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="mudejarPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                            <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="#F2C94C" stroke-width="2" />
+                            <path d="M20 20 L60 20 L60 60 L20 60 Z" fill="none" stroke="#F2C94C" stroke-width="1" />
+                            <polygon points="40,10 50,40 40,70 30,40" fill="none" stroke="#F2C94C" stroke-width="1.5" />
+                            <polygon points="10,40 40,50 70,40 40,30" fill="none" stroke="#F2C94C" stroke-width="1.5" />
+                            <circle cx="40" cy="40" r="4" fill="#F2C94C" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#mudejarPattern)" />
+                </svg>
+            </div>
+            <div class="container" style="position: relative; z-index: 1;">
+                <h1 class="animated-gradient-text">El Diario del <span class="text-accent">Artesano</span></h1>
+                <p class="catalog-hero-sub">Cada pieza tiene un alma. Haz clic para descubrir la historia detrás de cada
+                    creación.</p>
+            </div>
+        </section>
+
+        <!-- FILTER BAR -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-bar" id="filterBar">
+                    <div class="filter-chips" id="filterChips">
+                        <button class="filter-chip active" data-filter="all">Todas</button>
+                        <button class="filter-chip" data-filter="ceramica">🏺 Cerámica</button>
+                        <button class="filter-chip" data-filter="textil">🧵 Textil</button>
+                        <button class="filter-chip" data-filter="madera">🪵 Madera</button>
+                        <button class="filter-chip" data-filter="cuero">👜 Cuero</button>
+                        <button class="filter-chip" data-filter="vidrio">✨ Vidrio</button>
+                        <button class="filter-chip" data-filter="metal">⚒️ Metal</button>
+                    </div>
+                    <div class="result-count" id="resultCount">30 piezas únicas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JOURNAL GRID -->
+        <section class="journal-section">
+            <div class="container">
+                <div class="journal-grid" id="journalGrid">
+                    <!-- Cards are injected by catalog.js -->
+                </div>
+
+                <!-- LOAD MORE -->
+                <div class="load-more-wrap" id="loadMoreWrap">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                        Descubrir más historias
+                    </button>
+                    <p class="load-more-count" id="loadMoreCount">Mostrando 9 de 30</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom" style="padding-top:0; border-top:none;">
+                    <p>&copy; 2026 Artesanía Digital. Todos los derechos reservados.</p>
+                </div>
+        </footer>
+
+    </main>
+
+    <!-- ============================================================
+       CART SIDE DRAWER ("La Galería Personal")
+       ============================================================ -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Mi Colección">
+        <div class="cart-header">
+            <h2>Mi Colección</h2>
+            <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div class="cart-body">
+            <ul class="cart-items" id="cartItems">
+                <!-- Items injected here -->
+            </ul>
+        </div>
+
+        <div class="cart-footer">
+            <div class="ia-recommendation" id="cartIA">
+                <span class="ia-placeholder">Sommelier IA analiza tu colección...</span>
+            </div>
+            <button class="btn btn-marble marble-dark btn-checkout">
+                Finalizar Selección
+            </button>
+        </div>
+    </aside>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro Artesano | Artesanía Digital</title>
+    <meta name="description"
+        content="Descubre la historia, la técnica y las obras de nuestros maestros artesanos españoles.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR NAV (same as other pages) -->
+    <aside class="sidebar-nav" id="navbar">
+        <a href="index.html" class="sidebar-logo" aria-label="Artesanía Digital Home">
+            <span class="logo-icon">
+                <img src="assets/images/logo-ceramic-tile.jpg" alt="Logo"
+                    style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+            </span>
+            <span class="logo-text">Artesanía <br><span class="logo-accent">Digital</span></span>
+        </a>
+        <div class="sidebar-links" id="navLinks">
+            <a href="index.html#sommelier">Sommelier IA</a>
+            <a href="catalog.html">Catálogo</a>
+            <div class="sidebar-dropdown">
+                <a href="index.html#maestros" onclick="this.parentElement.classList.toggle('open'); return false;">
+                    Maestros
+                    <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </a>
+                <div class="sidebar-sub-links">
+                    <a href="catalog.html?cat=ceramica">🏺 Cerámica</a>
+                    <a href="catalog.html?cat=textil">🧶 Textil</a>
+                    <a href="catalog.html?cat=madera">🪵 Madera</a>
+                    <a href="catalog.html?cat=cuero">👜 Cuero</a>
+                    <a href="catalog.html?cat=vidrio">🥂 Vidrio</a>
+                    <a href="catalog.html?cat=metal">⚒️ Metal</a>
+                    <a href="index.html#maestros">Ver Todos</a>
+                </div>
+            </div>
+            <a href="index.html#how-it-works">Cómo Funciona</a>
+            <a href="artesano.html">Mi Taller ✨</a>
+        </div>
+        <div class="sidebar-footer">
+            <a href="#" class="nav-cta" id="cartToggleBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                </svg>
+                <span>Mi Carrito</span>
+            </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- HERO: Artisan Profile Header -->
+        <section class="maestro-profile-hero" id="maestroHero">
+            <div class="container">
+                <div class="maestro-profile-header">
+                    <div class="maestro-profile-avatar" id="mAvatar">MR</div>
+                    <div class="maestro-profile-info">
+                        <div class="maestro-profile-status" id="mStatus">
+                            <span class="status-dot online"></span> En el taller ahora
+                        </div>
+                        <h1 id="mName">María Ruiz</h1>
+                        <div class="maestro-profile-region" id="mRegion">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Granada, Andalucía
+                        </div>
+                        <div class="maestro-profile-specialty" id="mSpecialty">Cerámica Nazarí</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIO Section -->
+        <section class="maestro-profile-bio section">
+            <div class="container">
+                <div class="maestro-bio-grid">
+                    <div class="maestro-bio-image">
+                        <img id="mImage" src="assets/images/artisan-hands.png" alt="Maestro artesano en su taller">
+                    </div>
+                    <div class="maestro-bio-text">
+                        <h2>La Historia del Maestro</h2>
+                        <span class="gold-line"></span>
+                        <p id="mBio">Cuarta generación de alfareros granadinos...</p>
+                        <blockquote class="maestro-quote" id="mQuote">
+                            "Mis manos son solo un puente entre la tierra y el alma del que la poseerá."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKS Section -->
+        <section class="maestro-profile-works section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Obras del Maestro</h2>
+                    <span class="gold-line"></span>
+                    <p>Cada pieza está hecha a mano con técnicas transmitidas de generación en generación.</p>
+                </div>
+                <div class="maestro-works-grid" id="mWorksGrid">
+                    <!-- Populated by maestro.js -->
+                </div>
+                <div class="maestro-works-empty" id="mWorksEmpty" style="display:none;">
+                    <p>Este maestro aún está preparando su colección. ¡Vuelve pronto!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Artesanía Digital. Donde la tradición abraza la tecnología.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Cart Drawer HTML (same as other pages) -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3 class="cart-title">Mi Colección</h3>
+            <button class="cart-close" id="cartCloseBtn">&times;</button>
+        </div>
+        <ul class="cart-items" id="cartItems">
+            <li style="color:var(--color-text-light);text-align:center;padding:1rem;">Tu colección está vacía.</li>
+        </ul>
+        <div class="cart-footer">
+            <button class="btn-checkout">Finalizar Selección</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="maestros-data.js"></script>
+    <script src="maestro.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
