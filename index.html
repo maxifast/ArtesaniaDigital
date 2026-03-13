@@ -21,6 +21,17 @@
 
 <body>
 
+  <!-- Flag Wave SVG Filter Definition -->
+  <svg width="0" height="0" style="position: absolute; z-index: -1; visibility: hidden;">
+    <filter id="flag-wave" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005 0.008" numOctaves="2" result="noise">
+        <animate attributeName="baseFrequency" values="0.005 0.008; 0.007 0.012; 0.005 0.008" dur="12s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+      <feColorMatrix in="displaced" type="matrix" values="0 0 0 0 1   0 0 0 0 0   0 0 0 0 0   0 0 0 1 0" />
+    </filter>
+  </svg>
+
   <!-- ============================================================
        SIDEBAR NAV
        ============================================================ -->
@@ -88,48 +99,52 @@
           alt="Cerámica española artesanal dispuesta sobre una mesa de madera rústica con luz dorada">
       </div>
 
+      <!-- Terracotta Wave Animation Layer -->
+      <div class="hero-wave" aria-hidden="true"></div>
+
       <!-- Moroccan Star Pattern Overlay -->
-      <div class="hero-pattern-overlay" aria-hidden="true"
-        style="position: absolute; inset: 0; z-index: -1; opacity: 0.15; pointer-events: none; background: url('assets/images/Moroccan-Star-Pattern.png') repeat center center; background-size: 350px 350px;">
-      </div>
+      <div class="hero-pattern-overlay" aria-hidden="true"></div>
 
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <div class="hero-badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-            <path
-              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-          </svg>
-          Impulsado por Inteligencia Artificial
-        </div>
-
-        <h1 class="animated-gradient-text">Donde la <span class="accent">tradición</span> se encuentra con el mundo</h1>
-
-        <p class="hero-subtitle">
-          El marketplace que conecta maestros artesanos españoles con amantes del arte auténtico en todo el mundo. La IA
-          se encarga de todo lo demás.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#catalog" class="btn btn-primary">
-            Explorar Colección
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
+        <div class="hero-content-inner">
+          <div class="hero-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path
+                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
             </svg>
-          </a>
-          <a href="#artisans" class="btn btn-outline">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <polygon points="10 8 16 12 10 16 10 8" />
-            </svg>
-            Conoce a los Artesanos
-          </a>
+            Impulsado por Inteligencia Artificial
+          </div>
+
+          <h1 class="animated-gradient-text">Donde la <span class="accent">tradición</span> se encuentra con el mundo
+          </h1>
+
+          <p class="hero-subtitle">
+            El marketplace que conecta maestros artesanos españoles con amantes del arte auténtico en todo el mundo.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">
+              Explorar Colección
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#artisans" class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+              Conoce a los Artesanos
+            </a>
+          </div>
         </div>
       </div>
+
 
       <div class="hero-scroll">
         <span class="hero-scroll-label">DESCUBRE</span>
